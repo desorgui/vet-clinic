@@ -1,31 +1,44 @@
-# curriculum-databases-projects-template
+# Vet-clinic database-project
 
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
+In this project, I will use a relational database to create the initial data structure for a vet clinic. I will create a table to store animals' information, insert some data into it, and query it.
 
+## Built With
+
+- SQL
 
 ## Getting Started
 
-This repository includes files with plain SQL that can be used to recreate a database:
+This repository includes SQL files that contains data for Vet-Clinic. 
 
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
+- Used [schema.sql](./schema.sql) to create all tables.
+- Used [data.sql](./data.sql) to populate tables with sample data.
+- Checked [queries.sql](./queries.sql) 
 
+## Clone this repository
+
+      $ git clone git@github.com:Brenda309/vet-clinic.git
+      $ cd vet-clinic
+
+## Run Project
+      $ psql to enter database
+      $ SELECT * FROM; Animals to see data
+      $ \q to exit
+      
+### Setup
+- Text editor
+- Terminal
+
+### Install
+    $ sudo apt-get -y install postgresql
+    $ psql
 
 ## Authors
 
-👤 **Author1**
+👤 **Desor Guishny**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@desorgui](https://github.com/desorgui)
+- Twitter: [@DGuishny](https://twitter.com/DGuishny)
+- LinkedIn: [desorguishny](https://linkedin.com/in/desorguishny/)
 
 ## 🤝 Contributing
 
