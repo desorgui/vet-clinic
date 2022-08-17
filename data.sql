@@ -12,3 +12,27 @@ insert into animals(id, name, date_of_birth, escape_attempts, neutered, weight_k
 insert into animals(id, name, date_of_birth, escape_attempts, neutered, weight_kg) values (9, 'Boarmon', '06-07-2005', 7, true, 20.4);
 insert into animals(id, name, date_of_birth, escape_attempts, neutered, weight_kg) values (10, 'Blossom', '10-13-1998', 3, true, 17);
 insert into animals(id, name, date_of_birth, escape_attempts, neutered, weight_kg) values (11, 'Ditto', '05-14-2022', 4, true, 22);
+
+insert into owners(full_name, age) values ('Sam Smith', 34);
+insert into owners(full_name, age) values ('Jennifer Orwell', 19);
+insert into owners(full_name, age) values ('Bob', 45);
+insert into owners(full_name, age) values ('Melody Pond', 77);
+insert into owners(full_name, age) values ('Dean Winchester', 14);
+insert into owners(full_name, age) values ('Jodie Whittaker', 38);
+
+insert into species(name) values ('Pokemon');
+insert into species(name) values ('Digimon');
+
+update animals set species_id = (select id from species where name = 'Digimon') where name like '%mon';
+
+update animals set species_id = (select id from species where name = 'Pokemon') where species_id is null;
+
+update animals set owners_id = (select id from owners where full_name = 'Sam Smith') where name = 'Agumon';
+
+update animals set owners_id = (select id from owners where full_name = 'Jennifer Orwell') where name = 'Gabumon' or name = 'Pikachu';
+
+update animals set owners_id = (select id from owners where full_name = 'Bob') where name = 'Devimon' or name = 'Plantmon';
+
+update animals set owners_id = (select id from owners where full_name = 'Melody Pond') where name = 'Charmander' or name = 'Squirtle' or name = 'Blossom';
+
+update animals set owners_id = (select id from owners where full_name = 'Dean Winchester') where name = 'Angemon' or name = 'Boarmon';
