@@ -19,4 +19,4 @@ alter table animals add column species_id int references species(id);
 
 alter table owners add primary key (id);
 
-alter table animals add column owners_id int references owners(id);
+alter table animals add column owner_id int references owners(id);

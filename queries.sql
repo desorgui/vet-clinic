@@ -52,16 +52,16 @@ select species, avg(escape_attempts) from animals where date_of_birth between '1
 
 
 -- What animals belong to Melody Pond?
-select * from animals A join owners O on O.id = A.owners_id where O.full_name = 'Melody Pond';
+select * from animals A join owners O on O.id = A.owner_id where O.full_name = 'Melody Pond';
 -- List of all animals that are pokemon (their type is Pokemon).
 select * from animals A join species S on S.id = A.species_id where S.name = 'Pokemon';
 -- List all owners and their animals, remember to include those that don't own any animal.
-select * from owners O left join animals A on O.id = A.owners_id;
+select * from owners O left join animals A on O.id = A.owner_id;
 -- How many animals are there per species?
 select S.name, count(*) from animals A join species S on A.species_id = S.id group by S.name;
 -- List all Digimon owned by Jennifer Orwell.
-select * from animals A join owners O on O.id = A.owners_id join species S on S.id = A.species_id where O.full_name = 'Jennifer Orwell' and S.name = 'Digimon';
+select * from animals A join owners O on O.id = A.owner_id join species S on S.id = A.species_id where O.full_name = 'Jennifer Orwell' and S.name = 'Digimon';
 -- List all animals owned by Dean Winchester that haven't tried to escape.
-select A.name from animals A join owners O on O.id = A.owners_id where O.full_name = 'Dean Winchester' and A.escape_attempts = 0;
+select A.name from animals A join owners O on O.id = A.owner_id where O.full_name = 'Dean Winchester' and A.escape_attempts = 0;
 -- Who owns the most animals?
-select O.full_name, count(*) from owners O left join animals A on O.id = A.owners_id group by O.full_name order by count(*) desc;
+select O.full_name, count(*) from owners O left join animals A on O.id = A.owner_id group by O.full_name order by count(*) desc;
