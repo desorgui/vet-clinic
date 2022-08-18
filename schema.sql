@@ -20,3 +20,10 @@ alter table animals add column species_id int references species(id);
 alter table owners add primary key (id);
 
 alter table animals add column owner_id int references owners(id);
+
+create table vets(id int generated always as identity primary key, name text, age int, date_of_graduation date);
+
+create table specializations(id int generated always as identity primary key, specie_id int, vet_id int, constraint fk_species foreign key (specie_id) references species(id), constraint fk_vets foreign key (vet_id) references vets(id));
+
+create table visits(id int generated always as identity primary key, animal_id int, vet_id int, visit_date date, constraint fk_animals foreign key (animal_id) references animals(id), constraint fk_vets foreign key (vet_id) references vets(id));
+
