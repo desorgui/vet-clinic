@@ -40,6 +40,12 @@ This repository includes SQL files that contains data for Vet-Clinic.
 - Twitter: [@DGuishny](https://twitter.com/DGuishny)
 - LinkedIn: [desorguishny](https://linkedin.com/in/desorguishny/)
 
+👤 **Judá Teixeira**
+
+- GitHub: [@mrjuda](https://github.com/mrjuda)
+- Twitter: [@judalabs](https://twitter.com/judalabs)
+- LinkedIn: [JudaTeixeira](https://linkedin.com/in/judateixeira/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
