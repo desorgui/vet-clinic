@@ -85,3 +85,14 @@ select count(*) AS visits_numbers from visits V join animals A on A.id = V.anima
 select count(*), S.name from animals A join visits V on V.animal_id = A.id join vets Vt on V.vet_id = Vt.id join species S on S.id = A.species_id where Vt.name = 'Maisy Smith' group by S.name;
 -- What specialty should Maisy Smith consider getting? Look for the species she gets the most.
 select * from visits V join animals A on V.animal_id = A.id join vets Vt on V.vet_id = Vt.id order by V.visit_date desc limit 1;
+
+-- Test 1
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits
+where animal_id = 4;
+
+-- Test 2
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+
+-- Test 3
+EXPLAIN ANALYZE SELECT * FROM owners
+where email = 'owner_18327@mail.com';
