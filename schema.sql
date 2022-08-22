@@ -28,10 +28,22 @@ create table specializations(specie_id int, vet_id int, constraint fk_species fo
 
 create table visits(animal_id int, vet_id int, visit_date date, constraint fk_animals foreign key (animal_id) references animals(id), constraint fk_vets foreign key (vet_id) references vets(id));
 
-EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+-- EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
 
-EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
+-- EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
 
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
-CREATE INDEX owners_fullName_asc ON owners(full_name ASC);
+DROP INDEX owners_fullName_asc;
+
+CREATE INDEX visits_visit_date
+ON visits(date_of_visit ASC);
+
+SELECT * FROM visits;
+
+CREATE INDEX owners_fullName_asc
+ON owners(full_name ASC);
+
+-- SELECT * FROM owners;
+
+-- DROP INDEX owners_fullName_asc;

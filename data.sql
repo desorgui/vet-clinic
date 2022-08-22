@@ -73,6 +73,13 @@ insert into visits(animal_id, vet_id, visit_date) values (9, 2, '2020-08-03');
 insert into visits(animal_id, vet_id, visit_date) values (10, 3, '2020-05-24');
 insert into visits(animal_id, vet_id, visit_date) values (10, 1, '2021-01-11');
 
-INSERT INTO visits (animal_id, vet_id, date_of_visit) SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+INSERT INTO visits (animal_id, vet_id, date_of_visit)
+SELECT * FROM (SELECT id FROM animals)
+animal_ids,
+(SELECT id FROM vets)
+vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours')
+visit_timestamp;
 
 insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
+
+SELECT * FROM owners;

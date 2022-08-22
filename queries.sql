@@ -87,8 +87,10 @@ select count(*), S.name from animals A join visits V on V.animal_id = A.id join 
 select * from visits V join animals A on V.animal_id = A.id join vets Vt on V.vet_id = Vt.id order by V.visit_date desc limit 1;
 
 
-explain analyze SELECT COUNT(*) FROM visits where animal_id = 4
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits
+where animal_id = 4;
 
 EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
 
-EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
+EXPLAIN ANALYZE SELECT * FROM owners
+where email = 'owner_18327@mail.com';
