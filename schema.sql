@@ -37,7 +37,7 @@ CREATE INDEX visits_visit_date
 ON visits(date_of_visit ASC);
 
 -- Test 2: create index for ??
-CREATE INDEX vet_id
+CREATE INDEX visits_vet_id
 ON visits(vet_id ASC);
 
 -- Test 3: create index for owners_full_name
