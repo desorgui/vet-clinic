@@ -86,7 +86,6 @@ select count(*), S.name from animals A join visits V on V.animal_id = A.id join 
 -- What specialty should Maisy Smith consider getting? Look for the species she gets the most.
 select * from visits V join animals A on V.animal_id = A.id join vets Vt on V.vet_id = Vt.id order by V.visit_date desc limit 1;
 
-
 -- Test 1
 EXPLAIN ANALYZE SELECT COUNT(*) FROM visits
 where animal_id = 4;
