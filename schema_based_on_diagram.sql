@@ -27,3 +27,23 @@ CREATE TABLE invoices (
 );
 
 CREATE INDEX ON invoices (medical_history_id);
+
+CREATE TABLE treatments (
+  id integer GENERATED ALWAYS AS IDENTITY,
+  type TEXT,
+  name TEXT,
+  primary key (id)
+);
+
+CREATE TABLE invoice_items (
+  id integer GENERATED ALWAYS AS IDENTITY,
+  unit_price DECIMAL,
+  quantity integer,
+  total_price DECIMAL,
+  invoice_id integer REFERENCES invoices(id),
+  treatment_id integer REFERENCES treatments(id),
+  PRIMARY KEY (id)
+);
+
+CREATE INDEX ON invoice_items (invoice_id);
+CREATE INDEX ON invoice_items (treatment_id);
