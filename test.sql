@@ -28,6 +28,12 @@ CREATE TABLE invoices (
 
 CREATE INDEX ON invoices (medical_history_id);
 
+
+/*
+ABOVE IS DONE
+BELOW NOT
+*/
+
 CREATE TABLE treatments (
   id integer GENERATED ALWAYS AS IDENTITY,
   type TEXT,
